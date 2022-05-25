@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Navbar from "./Navbar";
+import ToggleButtons from "./ToggleButtons";
+import Hero from "./Hero";
 
 function App() {
+  const [background, setBackground] = useState("light");
+
+  const darkMode = () => {
+    setBackground("dark");
+  };
+
+  const lightMode = () => {
+    setBackground("light");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ToggleButtons
+        darkMode={darkMode}
+        lightMode={lightMode}
+        background={background}
+      />
+      <Hero background={background} />
+      <Navbar />
+    </>
   );
 }
 
