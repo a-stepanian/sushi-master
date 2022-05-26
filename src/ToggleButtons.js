@@ -35,8 +35,6 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    background-color: var(--light-red);
-    transition: 0.8s;
     button {
       height: 50px;
       width: 50px;
@@ -55,9 +53,6 @@ const Wrapper = styled.div`
     .selected {
       outline: 2px solid rgb(0, 0, 100);
     }
-  }
-  .light-bg {
-    background-color: var(--dark-red);
   }
 `;
 
