@@ -5,8 +5,9 @@
 }
 :root {
   --light-red: rgb(245, 235, 235);
-  --dark-red: rgb(40, 0, 0);
+  --dark-red: rgb(45, 5, 5);
   --yellow: rgb(197, 178, 36);
+  --wood: rgb(236, 216, 180);
 }
 
 body {

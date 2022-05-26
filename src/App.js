@@ -1,28 +1,22 @@
 import { useState } from "react";
 import Navbar from "./Navbar";
-import ToggleButtons from "./ToggleButtons";
 import Hero from "./Hero";
 
 function App() {
-  const [background, setBackground] = useState("light");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const darkMode = () => {
-    setBackground("dark");
-  };
-
-  const lightMode = () => {
-    setBackground("light");
+  const toggleMenu = () => {
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    } else {
+      setIsMenuOpen(true);
+    }
   };
 
   return (
     <>
-      <ToggleButtons
-        darkMode={darkMode}
-        lightMode={lightMode}
-        background={background}
-      />
-      <Hero background={background} />
-      <Navbar />
+      <Navbar toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
+      <Hero isMenuOpen={isMenuOpen} />
     </>
   );
 }
